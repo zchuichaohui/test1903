@@ -1,0 +1,19 @@
+ @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                CookieManager cm = CookieManager.getInstance();
+                requestCookie = cm.getCookie(url);
+//                System.out.println("此时的cookie" + requestCookie);
+//                SharedPreferencesUtil.saveCookie(MainActivity.this,requestCookie);
+//                if(url.contains("login")){
+//                    System.out.println("此时的登录" + SharedPreferencesUtil.getCookie(MainActivity.this));
+//                    if(!SharedPreferencesUtil.getCookie(MainActivity.this).equals("")){
+//                        Map<String, String> header = new HashMap<>();
+//                        header.put("Cookie", requestCookie);
+//                        view.loadUrl(url,header);  //设置在此处可以修改请求头header中的参数
+//                    }
+//                }else{
+//                    view.loadUrl(url);
+//                }
+                view.loadUrl(url);
+                return true;
+            }
